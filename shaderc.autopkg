@@ -2,7 +2,7 @@
 configurations {
 	Toolset {
 		key : "PlatformToolset";
-        choices: { v140, v120, v110, v100 };
+        choices: { v141, v140, v120, v110, v100 };
     };
 }
 
@@ -10,15 +10,15 @@ nuget {
 
    nuspec {
       id = shaderc;
-      version : 1.0.0.0;
-      title:  Google's shaderc;
+      version : 1.1.0.0;
+      title:  "Google's shaderc";
       authors: { Shaderc Authors };
       licenseUrl: "https://www.apache.org/licenses/LICENSE-2.0";
       projectUrl: "https://github.com/google/shaderc/";
       requireLicenseAcceptance:false;
       summary: "A collection of tools, libraries and tests for shader compilation.";
 	    copyright: Copyright 2015 The Shaderc Authors. All rights reserved.;
-      description: "Google's shaderc library for Visual Studio 2015 (v140)";
+      description: "Google's shaderc library for VS2015 & VS2017";
       tags: { native };
    };
  
@@ -29,7 +29,6 @@ nuget {
         "shaderc\libshaderc\include\shaderc\*"
         
       };
-
 
       [x86,v140,release] {
          lib: {
@@ -52,6 +51,30 @@ nuget {
       [x64,v140,debug] {
          lib: { 
           "shaderc_v140_x64\libshaderc\Debug\shaderc_combined.lib"                            
+          }
+      };
+
+      [x86,v141,release] {
+         lib: {
+          "shaderc_v141_x86\libshaderc\Release\shaderc_combined.lib"
+          }
+      };
+ 
+      [x86,v141,debug] {
+         lib: {
+          "shaderc_v141_x86\libshaderc\Debug\shaderc_combined.lib"                       
+          }
+      };
+
+      [x64,v141,release] {
+         lib: { 
+          "shaderc_v141_x64\libshaderc\Release\shaderc_combined.lib"               
+          }
+      };
+ 
+      [x64,v141,debug] {
+         lib: { 
+          "shaderc_v141_x64\libshaderc\Debug\shaderc_combined.lib"                            
           }
       };
    };
